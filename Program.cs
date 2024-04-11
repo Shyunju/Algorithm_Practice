@@ -6,6 +6,10 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
+            Board board = new Board();
+            board.Initialize();
+
+
             Console.SetCursorPosition(0, 0);
             Console.CursorVisible = false;
             Console.WriteLine("Hello World!");
