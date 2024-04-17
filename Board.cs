@@ -4,60 +4,73 @@ using System.Text;
 
 namespace Algorithm
 {
-    class MyList<T>
+    class MyLinkedListNode<T>
     {
-        const int DEFAULT_SIZE = 1;
-        T[] _data = new T[DEFAULT_SIZE];
-        public int Count = 0; //실제 사용중인 데이터
-        public int Capacity { get { return _data.Length; } }  //예약된 데이터 
+        public T Data;
+        public MyLinkedListNode<T> Next;
+        public MyLinkedListNode<T> Prev;
+    }
 
-        public void Add(T item)  // 아이템 추가?
+    class MyLinkedList<T>
+    {
+        public int Count = 0;
+
+        public MyLinkedListNode<T> Head = null;
+        public MyLinkedListNode<T> Tail = null;
+
+        public MyLinkedListNode<T> AddLast(T data)
         {
-            //1.공간충분 확인
-            if(Count >= Capacity)
-            {
-                //공간 다시 확보
-                T[] newArray = new T[Count * 2];
-                for(int i = 0; i < Count; i++)
-                {
-                    newArray[i] = _data[i];
-                }
+            MyLinkedListNode<T> newRoom = new MyLinkedListNode<T>();
+            newRoom.Data = data;
 
-                _data = newArray;
+            if (Head == null)
+                Head = newRoom;
+
+            if(Tail != null)
+            {
+                Tail.Next = newRoom;
+                newRoom.Prev = Tail;
+
             }
-            //2. 공간에 데이터를 삽입
-            _data[Count] = item;
+
+            Tail = newRoom;
             Count++;
+            return newRoom;
         }
 
-        public T this[int index]
+        public void Remove(MyLinkedListNode<T> room)
         {
-            get { return _data[index]; }
-            set { _data[index] = value; }
-        }
+            if (Head == room)
+                Head = Head.Next;
 
-        public void RemoveAt(int index)
-        {
-            for(int i = index; i < Count -1; i++)
-            {
-                _data[i] = _data[i + 1];
-            }
-            _data[Count - 1] = default(T);
+            if (Tail == room)
+                Tail = Tail.Prev;
+
+            if (room.Prev != null)
+                room.Prev.Next = room.Next;
+
+            if (room.Next != null)
+                room.Next.Prev = room.Prev;
+
             Count--;
         }
+
+
+
     }
     class Board
     {
         public int[] _data = new int[25];
-        public MyList<int> _data2 = new MyList<int>();
-        public LinkedList<int> _data3 = new LinkedList<int>();
+        public MyLinkedList<int> _data3 = new MyLinkedList<int>();
         public void Initialize()
         {
-            _data2.Add(1);
-            _data2.Add(2);
-            _data2.Add(3);
-            _data2.Add(4);
-            _data2.Add(5);
+            _data3.AddLast(101);
+            _data3.AddLast(102);
+            MyLinkedListNode<int> node = _data3.AddLast(103);
+            _data3.AddLast(104);
+            _data3.AddLast(105);
+
+            _data3.Remove(node);
         }
     }
 }
