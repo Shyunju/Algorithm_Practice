@@ -18,14 +18,20 @@ namespace Algorithm
         }
         public void Initialize(int size)
         {
+            if (size % 2 == 0)
+                return;
             _tile = new TileType[size, size];
             _size = size;
 
+            GeneriateByBinaryTree();
+        }
+        void GeneriateByBinaryTree()
+        {
             for (int y = 0; y < _size; y++)
             {
-                for(int x = 0; x < _size; x++)
+                for (int x = 0; x < _size; x++)
                 {
-                    if (x == 0 || x == _size - 1 || y == 0 || y == _size - 1)
+                    if (x % 2 == 0 || y % 2 == 0)
                     {
                         _tile[y, x] = TileType.Wall;
                     }
@@ -34,6 +40,39 @@ namespace Algorithm
                 }
             }
 
+            //랜덤으로 우 혹은 하로 길을 뚫는 작업
+            Random rand = new Random();
+            for (int y = 0; y < _size; y++)
+            {
+                for (int x = 0; x < _size; x++)
+                {
+                    if (x % 2 == 0 || y % 2 == 0)
+                        continue;
+                    if (y == _size - 2 && x == _size - 2)
+                        continue;
+
+                    if (y == _size - 2)
+                    {
+                        _tile[y, x + 1] = TileType.Empty;
+                        continue;
+                    }
+                    if (x == _size - 2)
+                    {
+                        _tile[y + 1, x] = TileType.Empty;
+                        continue;
+                    }
+
+                    if (rand.Next(0, 2) == 0)
+                    {
+
+                        _tile[y, x + 1] = TileType.Empty;  //우
+                    }
+                    else
+                    {
+                        _tile[y + 1, x] = TileType.Empty;   //하
+                    }
+                }
+            }
         }
         public void Render()
         {
