@@ -1,0 +1,11 @@
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.exe
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.deps.json
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.runtimeconfig.json
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.runtimeconfig.dev.json
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.dll
+N:\projects\Rookies\Algorithm\bin\Debug\netcoreapp3.0\Algorithm.pdb
+N:\projects\Rookies\Algorithm\obj\Debug\netcoreapp3.0\Algorithm.csprojAssemblyReference.cache
+N:\projects\Rookies\Algorithm\obj\Debug\netcoreapp3.0\Algorithm.AssemblyInfoInputs.cache
+N:\projects\Rookies\Algorithm\obj\Debug\netcoreapp3.0\Algorithm.AssemblyInfo.cs
+N:\projects\Rookies\Algorithm\obj\Debug\netcoreapp3.0\Algorithm.dll
+N:\projects\Rookies\Algorithm\obj\Debug\netcoreapp3.0\Algorithm.pdb
