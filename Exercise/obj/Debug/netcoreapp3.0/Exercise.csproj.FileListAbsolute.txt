@@ -1,0 +1,11 @@
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.exe
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.deps.json
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.runtimeconfig.json
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.runtimeconfig.dev.json
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.dll
+N:\projects\Rookies\Exercise\bin\Debug\netcoreapp3.0\Exercise.pdb
+N:\projects\Rookies\Exercise\obj\Debug\netcoreapp3.0\Exercise.csprojAssemblyReference.cache
+N:\projects\Rookies\Exercise\obj\Debug\netcoreapp3.0\Exercise.AssemblyInfoInputs.cache
+N:\projects\Rookies\Exercise\obj\Debug\netcoreapp3.0\Exercise.AssemblyInfo.cs
+N:\projects\Rookies\Exercise\obj\Debug\netcoreapp3.0\Exercise.dll
+N:\projects\Rookies\Exercise\obj\Debug\netcoreapp3.0\Exercise.pdb
