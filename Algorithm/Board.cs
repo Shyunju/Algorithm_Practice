@@ -8,7 +8,7 @@ namespace Algorithm
     class Board
     {
         const char CIRCLE = '\u25cf';
-        public TileType[,] TIle { get; private set; }
+        public TileType[,] Tile { get; private set; }
         public int Size { get; private set; }
 
         public int DestY { get; private set; }
@@ -28,7 +28,7 @@ namespace Algorithm
 
             _player = player;
 
-            TIle = new TileType[size, size];
+            Tile = new TileType[size, size];
             Size = size;
 
             DestY = Size - 2;
@@ -45,10 +45,10 @@ namespace Algorithm
                 {
                     if (x % 2 == 0 || y % 2 == 0)
                     {
-                        TIle[y, x] = TileType.Wall;
+                        Tile[y, x] = TileType.Wall;
                     }
                     else
-                        TIle[y, x] = TileType.Empty;
+                        Tile[y, x] = TileType.Empty;
                 }
             }
 
@@ -65,23 +65,23 @@ namespace Algorithm
 
                     if (y == Size - 2)
                     {
-                        TIle[y, x + 1] = TileType.Empty;
+                        Tile[y, x + 1] = TileType.Empty;
                         continue;
                     }
                     if (x == Size - 2)
                     {
-                        TIle[y + 1, x] = TileType.Empty;
+                        Tile[y + 1, x] = TileType.Empty;
                         continue;
                     }
 
                     if (rand.Next(0, 2) == 0)
                     {
 
-                        TIle[y, x + 1] = TileType.Empty;  //우
+                        Tile[y, x + 1] = TileType.Empty;  //우
                     }
                     else
                     {
-                        TIle[y + 1, x] = TileType.Empty;   //하
+                        Tile[y + 1, x] = TileType.Empty;   //하
                     }
                 }
             }
@@ -95,10 +95,10 @@ namespace Algorithm
 
                     if (x % 2 == 0 || y % 2 == 0)
                     {
-                        TIle[y, x] = TileType.Wall;
+                        Tile[y, x] = TileType.Wall;
                     }
                     else
-                        TIle[y, x] = TileType.Empty;
+                        Tile[y, x] = TileType.Empty;
                 }
             }
 
@@ -117,25 +117,25 @@ namespace Algorithm
 
                     if (y == Size - 2)
                     {
-                        TIle[y, x + 1] = TileType.Empty;
+                        Tile[y, x + 1] = TileType.Empty;
                         continue;
                     }
                     if (x == Size - 2)
                     {
-                        TIle[y + 1, x] = TileType.Empty;
+                        Tile[y + 1, x] = TileType.Empty;
                         continue;
                     }
 
                     if (rand.Next(0, 2) == 0)
                     {
 
-                        TIle[y, x + 1] = TileType.Empty;  //우
+                        Tile[y, x + 1] = TileType.Empty;  //우
                         count++;
                     }
                     else
                     {
                         int randomIndex = rand.Next(0, count);
-                        TIle[y + 1, x - randomIndex * 2] = TileType.Empty;   //하
+                        Tile[y + 1, x - randomIndex * 2] = TileType.Empty;   //하
                         count = 1;
                     }
                 }
@@ -154,7 +154,7 @@ namespace Algorithm
                     else if (y == DestY && x == DestX)
                         Console.ForegroundColor = ConsoleColor.Yellow;
                     else
-                        Console.ForegroundColor = GetTileColor(TIle[y, x]);
+                        Console.ForegroundColor = GetTileColor(Tile[y, x]);
 
                     Console.Write(CIRCLE);
                 }
