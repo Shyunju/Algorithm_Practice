@@ -32,7 +32,7 @@ namespace Exercise
                 int now = -1;
                 for(int i = 0; i < 6; i++)
                 {
-                    //이민 장문한 정점 스킵
+                    //이미 방문한 정점 스킵
                     if (visited[i])
                         continue;
 
@@ -106,7 +106,6 @@ namespace Exercise
         static void Main(string[] args)
         {
             Stack<int> stack = new Stack<int>();
-
 
             Queue<int> queue = new Queue<int>();
 
